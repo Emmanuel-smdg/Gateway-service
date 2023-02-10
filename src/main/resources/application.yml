@@ -10,18 +10,10 @@ spring:
           uri: lb://inventory-service
           predicates:
             - Path= /products/**
-      discovery:
-        locator:
-          enabled: true
-          lower-case-service-id: true
-  #    discovery:
-#      enabled: false
+    discovery:
+      enabled: true
   application:
     name: gateway-service
-eureka:
-  client:
-    service-url:
-      defaultZone: http://localhost:8761/eureka/
 server:
   port: 8888
 
