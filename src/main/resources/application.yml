@@ -17,4 +17,4 @@ spring:
 server:
   port: 8888
 
-#Il s'agit ici d'une configuration statique étant donnée que nous sommes en test et que nous connaissons l'url de nos microservices
+#Configuration dynamique
