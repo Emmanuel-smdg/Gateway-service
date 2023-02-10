@@ -3,15 +3,26 @@ spring:
     gateway:
       routes:
         - id : r1
-          uri: http://localhost:8081/
+          uri: lb://customer-service
           predicates:
             - Path= /customers/**
         - id : r2
-          uri: http://localhost:8082/
+          uri: lb://inventory-service
           predicates:
             - Path= /products/**
-    discovery:
-      enabled: false
+      discovery:
+        locator:
+          enabled: true
+          lower-case-service-id: true
+  #    discovery:
+#      enabled: false
+  application:
+    name: gateway-service
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
 server:
   port: 8888
 
+#Il s'agit ici d'une configuration statique étant donnée que nous sommes en test et que nous connaissons l'url de nos microservices
