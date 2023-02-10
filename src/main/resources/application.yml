@@ -1,15 +1,15 @@
 spring:
   cloud:
-    gateway:
-      routes:
-        - id : r1
-          uri: lb://customer-service
-          predicates:
-            - Path= /customers/**
-        - id : r2
-          uri: lb://inventory-service
-          predicates:
-            - Path= /products/**
+#    gateway:
+#      routes:
+#        - id : r1
+#          uri: lb://customer-service
+#          predicates:
+#            - Path= /customers/**
+#        - id : r2
+#          uri: lb://inventory-service
+#          predicates:
+#            - Path= /products/**
     discovery:
       enabled: true
   application:
